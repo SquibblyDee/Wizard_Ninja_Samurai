@@ -67,7 +67,7 @@ namespace Human_Application
             (ted as Samurai).DeathBlow(DeathblowBoxedObject);
 
             ////Damaging then healing Ted via meditation
-            // SamuraiInfo(ted as Samurai);
+            SamuraiInfo(ted as Samurai);
             object BoxedObject3 = ted;
             phil.Attack(ref BoxedObject3);
             // SamuraiInfo(ted as Samurai);
