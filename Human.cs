@@ -121,6 +121,12 @@ namespace Human_Application
             Console.WriteLine("Successfully stole some stuff.");
         }
 
+        public void GetAway()
+        {
+            this.health-=15;
+            Console.WriteLine("Successfully got away.");
+        }
+
 
     }
 }

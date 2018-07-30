@@ -48,6 +48,11 @@ namespace Human_Application
             HumanInfo(phil);
             NinjaInfo(drake);
 
+            ////Have drake get away
+            NinjaInfo(drake);
+            drake.GetAway();
+            NinjaInfo(drake);
+
         }
 
         static void WizardInfo(Wizard obj)
