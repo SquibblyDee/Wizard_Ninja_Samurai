@@ -106,6 +106,22 @@ namespace Human_Application
                 Console.WriteLine("Fireball hit for {0} damage.", damage);
                 target.health-=damage;
             }
+            if(obj.GetType() == typeof(Ninja))
+            {
+                Ninja target = obj as Ninja;
+                Random rand = new Random();
+                int damage = rand.Next(20,51);
+                Console.WriteLine("Fireball hit for {0} damage.", damage);
+                target.health-=damage;
+            }
+            if(obj.GetType() == typeof(Samurai))
+            {
+                Samurai target = obj as Samurai;
+                Random rand = new Random();
+                int damage = rand.Next(20,51);
+                Console.WriteLine("Fireball hit for {0} damage.", damage);
+                target.health-=damage;
+            }
         }
     }
 
@@ -134,7 +150,6 @@ namespace Human_Application
         }
     }
 
-
     public class Samurai : Human
     {
         public new int health;
@@ -149,7 +164,7 @@ namespace Human_Application
         {
             if(obj.GetType() == typeof(Human))
             {
-                Human target = obj as Human;
+                Human target = obj as Human; 
                 if(target.health<50)
                     {
                         target.health=0;
@@ -204,6 +219,7 @@ namespace Human_Application
         public void Meditate()
         {
             health=200;
+            Console.WriteLine("Meditation complete, health restored.");
         }
     }
 }
