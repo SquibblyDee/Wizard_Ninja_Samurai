@@ -1,0 +1,10 @@
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\bin\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.deps.json
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\bin\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.runtimeconfig.json
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\bin\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.runtimeconfig.dev.json
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\bin\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.dll
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\bin\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.pdb
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\obj\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.csproj.CoreCompileInputs.cache
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\obj\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.AssemblyInfoInputs.cache
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\obj\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.AssemblyInfo.cs
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\obj\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.dll
+C:\Users\S\Google Drive\CSharp\Wizard_Ninja_Samurai\obj\Debug\netcoreapp2.0\Wizard_Ninja_Samurai.pdb
