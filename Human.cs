@@ -5,11 +5,11 @@ namespace Human_Application
 {
     public class Human
     {
-        public int strength;
-        public int dexterity;
-        public int intelligence;
-        public int health;
-        public string name;
+        public int strength { get; set; }
+        public int dexterity { get; set; }
+        public int intelligence { get; set; }
+        public int health { get; set; }
+        public string name { get; set; }
 
         ////Create a base Human class with five attributes: name, strength, intelligence, dexterity, and health.
         ////Give a default value of 3 for strength, intelligence, and dexterity. Health should have a default of 100.
@@ -34,7 +34,6 @@ namespace Human_Application
         }
 
         ////Now add a new method called attack, which when invoked, should attack another Human object that is passed as a parameter.
-
         public void Attack(ref Human_Application.Human obj)
         {
             if(obj.GetType() == typeof(Human))
@@ -44,4 +43,46 @@ namespace Human_Application
             }
         }
     }
+
+    ////Wizard should have a default health of 50 and intelligence of 25
+    public class Wizard : Human
+    {
+        public new int health;
+        public new int intelligence; 
+
+        public Wizard(string str)
+        {
+            name = str;
+            intelligence = 25;
+            health = 50;
+        }
+        
+        public void Heal()
+        {
+            int healAmount = intelligence*10;
+            this.health+=healAmount;
+            Console.WriteLine("Healed for {0}", healAmount);
+        }
+
+        public void Fireball(ref object obj)
+        {
+            if(obj.GetType() == typeof(Human))
+            {
+                Human target = obj as Human;
+                Random rand = new Random();
+                int damage = rand.Next(20,51);
+                Console.WriteLine("Fireball hit for {0} damage.", damage);
+                target.health-=damage;
+            }
+            if(obj.GetType() == typeof(Wizard))
+            {
+                Wizard target = obj as Wizard;
+                Random rand = new Random();
+                int damage = rand.Next(20,51);
+                Console.WriteLine("Fireball hit for {0} damage.", damage);
+                target.health-=damage;
+            }
+        }
+    }
+
 }
