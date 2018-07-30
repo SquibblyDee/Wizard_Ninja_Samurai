@@ -16,61 +16,63 @@ namespace Human_Application
             Human phil = new Human("Phil", 5, 5, 5, 120);
             // HumanInfo(phil);
 
+            
             ///Having Steve attack Phil. We need to pass the object as a reference or we can't edit it's attributes on the other side
-            Console.WriteLine("\nSteve is attacking Phil...");
             object AttackBoxedObject = phil;
             steve.Attack(ref AttackBoxedObject);
-            // HumanInfo(steve);
-            // HumanInfo(phil);
+            HumanInfo(steve);
+            HumanInfo(phil);
 
             ////Creating a Wizard object named Dilbert
             Wizard dilbert = new Wizard("Dilbert");
-            // WizardInfo(dilbert);
+            WizardInfo(dilbert);
 
             ////Healing our wizard, Dilbert
             dilbert.Heal();
-            // WizardInfo(dilbert);
+            WizardInfo(dilbert);
 
             ////Casting Fireball on Steve
-            // HumanInfo(steve);
+            HumanInfo(steve);
             object BoxedData = steve;
             dilbert.Fireball(ref BoxedData);
-            // HumanInfo(steve);
+            HumanInfo(steve);
 
             ////Creating a new Ninja object named Drake
             Ninja drake = new Ninja("Drake");
 
             ////Steal from Phil
-            // HumanInfo(phil);
-            // NinjaInfo(drake);
+            HumanInfo(phil);
+            NinjaInfo(drake);
             object BoxedData2 = phil;
             drake.Steal(ref BoxedData2);
-            // HumanInfo(phil);
-            // NinjaInfo(drake);
+            HumanInfo(phil);
+            NinjaInfo(drake);
 
             ////Have drake get away
-            // NinjaInfo(drake);
+            NinjaInfo(drake);
             drake.GetAway();
-            // NinjaInfo(drake);
+            NinjaInfo(drake);
 
             ////Create a new samurai named Ted
-            Samurai ted = new Samurai("Ted");
+            Human ted = new Samurai("Ted");
+            Console.WriteLine("CREATED TED");
+            SamuraiInfo(ted as Samurai);
 
             ////Have Ted deathblow and fail, then weaken and deathblow Drake
             object DeathblowBoxedObject = drake;
-            ted.DeathBlow(DeathblowBoxedObject);
+            (ted as Samurai).DeathBlow(DeathblowBoxedObject);
             ted.Attack(ref DeathblowBoxedObject);
             ted.Attack(ref DeathblowBoxedObject);
             ted.Attack(ref DeathblowBoxedObject);
-            ted.DeathBlow(DeathblowBoxedObject);
+            (ted as Samurai).DeathBlow(DeathblowBoxedObject);
 
             ////Damaging then healing Ted via meditation
-            // SamuraiInfo(ted);
+            HumanInfo(ted);
             object BoxedObject3 = ted;
             phil.Attack(ref BoxedObject3);
-            // SamuraiInfo(ted);
-            ted.Meditate();
-            // SamuraiInfo(ted);
+            HumanInfo(ted);
+            (ted as Samurai).Meditate();
+            HumanInfo(ted);
         }
 
         static void WizardInfo(Wizard obj)
@@ -84,7 +86,7 @@ namespace Human_Application
 
         static void HumanInfo(Human obj)
         {
-            Console.WriteLine("\nNAME: "+obj.name);
+            Console.WriteLine("\nNAME: "+(obj as Samurai).name);
             Console.WriteLine("STRENGTH: "+obj.strength);
             Console.WriteLine("INTELLIGENCE: "+obj.intelligence);
             Console.WriteLine("DEXTERITY: "+obj.dexterity);
