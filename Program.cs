@@ -18,7 +18,8 @@ namespace Human_Application
             Console.WriteLine("\nSteve is attacking Phil...");
             
             ///Having Steve attack Phil. We need to pass the object as a reference or we can't edit it's attributes on the other side
-            steve.Attack(ref phil);
+            object AttackBoxedObject = phil;
+            steve.Attack(ref AttackBoxedObject);
             HumanInfo(steve);
             HumanInfo(phil);
 
@@ -35,6 +36,18 @@ namespace Human_Application
             object BoxedData = steve;
             dilbert.Fireball(ref BoxedData);
             HumanInfo(steve);
+
+            ////Creating a new Ninja object named Drake
+            Ninja drake = new Ninja("Drake");
+
+            ////Steal from Phil
+            HumanInfo(phil);
+            NinjaInfo(drake);
+            object BoxedData2 = phil;
+            drake.Steal(ref BoxedData2);
+            HumanInfo(phil);
+            NinjaInfo(drake);
+
         }
 
         static void WizardInfo(Wizard obj)
@@ -47,6 +60,15 @@ namespace Human_Application
         }
 
         static void HumanInfo(Human obj)
+        {
+            Console.WriteLine("\nNAME: "+obj.name);
+            Console.WriteLine("STRENGTH: "+obj.strength);
+            Console.WriteLine("INTELLIGENCE: "+obj.intelligence);
+            Console.WriteLine("DEXTERITY: "+obj.dexterity);
+            Console.WriteLine("HEALTH: "+obj.health);
+        }
+
+        static void NinjaInfo(Ninja obj)
         {
             Console.WriteLine("\nNAME: "+obj.name);
             Console.WriteLine("STRENGTH: "+obj.strength);

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace Human_Application
 {
+
+
     public class Human
     {
         public int strength { get; set; }
@@ -34,23 +36,39 @@ namespace Human_Application
         }
 
         ////Now add a new method called attack, which when invoked, should attack another Human object that is passed as a parameter.
-        public void Attack(ref Human_Application.Human obj)
+        public void Attack(ref object obj)
         {
+
             if(obj.GetType() == typeof(Human))
             {
+                Human target = obj as Human;
                 int damage = strength*5;
-                obj.health-=damage;
+                target.health-=damage;
+            }
+            if(obj.GetType() == typeof(Wizard))
+            {
+                Wizard target = obj as Wizard;
+                int damage = strength*5;
+                target.health-=damage;
+            }
+            if(obj.GetType() == typeof(Ninja))
+            {
+                Ninja target = obj as Ninja;
+                int damage = strength*5;
+                target.health-=damage;
             }
         }
     }
 
     ////Wizard should have a default health of 50 and intelligence of 25
+
+
     public class Wizard : Human
     {
         public new int health;
         public new int intelligence; 
 
-        public Wizard(string str)
+        public Wizard(string str="John")
         {
             name = str;
             intelligence = 25;
@@ -85,4 +103,24 @@ namespace Human_Application
         }
     }
 
+
+    public class Ninja : Human
+    {
+        public new int dexterity;
+
+        public Ninja(string str="John")
+        {
+            dexterity=175;
+            name=str;
+        }
+
+        public void Steal(ref object obj)
+        {
+            Attack(ref obj);
+            health-=10;
+            Console.WriteLine("Successfully stole some stuff.");
+        }
+
+
+    }
 }
