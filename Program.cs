@@ -53,6 +53,26 @@ namespace Human_Application
             drake.GetAway();
             NinjaInfo(drake);
 
+            ////Create a new samurai named Ted
+            Samurai ted = new Samurai("Ted");
+
+            ////Have Ted deathblow and fail, then weaken and deathblow Drake
+            object DeathblowBoxedObject = drake;
+            ted.DeathBlow(DeathblowBoxedObject);
+            ted.Attack(ref DeathblowBoxedObject);
+            ted.Attack(ref DeathblowBoxedObject);
+            ted.Attack(ref DeathblowBoxedObject);
+            ted.DeathBlow(DeathblowBoxedObject);
+
+            ////Damaging then healing Ted via meditation
+            SamuraiInfo(ted);
+            object BoxedObject3 = ted;
+            phil.Attack(ref BoxedObject3);
+            SamuraiInfo(ted);
+            ted.Meditate();
+            SamuraiInfo(ted);
+
+
         }
 
         static void WizardInfo(Wizard obj)
@@ -74,6 +94,15 @@ namespace Human_Application
         }
 
         static void NinjaInfo(Ninja obj)
+        {
+            Console.WriteLine("\nNAME: "+obj.name);
+            Console.WriteLine("STRENGTH: "+obj.strength);
+            Console.WriteLine("INTELLIGENCE: "+obj.intelligence);
+            Console.WriteLine("DEXTERITY: "+obj.dexterity);
+            Console.WriteLine("HEALTH: "+obj.health);
+        }
+
+        static void SamuraiInfo(Samurai obj)
         {
             Console.WriteLine("\nNAME: "+obj.name);
             Console.WriteLine("STRENGTH: "+obj.strength);

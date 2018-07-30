@@ -57,6 +57,12 @@ namespace Human_Application
                 int damage = strength*5;
                 target.health-=damage;
             }
+            if(obj.GetType() == typeof(Samurai))
+            {
+                Samurai target = obj as Samurai;
+                int damage = strength*5;
+                target.health-=damage;
+            }
         }
     }
 
@@ -126,7 +132,78 @@ namespace Human_Application
             this.health-=15;
             Console.WriteLine("Successfully got away.");
         }
+    }
 
 
+    public class Samurai : Human
+    {
+        public new int health;
+
+        public Samurai(string str="John")
+        {
+            name=str;
+            health=200;
+        }
+
+        public void DeathBlow(object obj)
+        {
+            if(obj.GetType() == typeof(Human))
+            {
+                Human target = obj as Human;
+                if(target.health<50)
+                    {
+                        target.health=0;
+                        Console.WriteLine("Deathblow succeeded, target killed.");
+                    }
+                else
+                    {
+                        Console.WriteLine("Deathblow missed, target had too much health");
+                    }
+            }
+            if(obj.GetType() == typeof(Ninja))
+            {
+                Ninja target = obj as Ninja;
+                if(target.health<50)
+                    {
+                        target.health=0;
+                        Console.WriteLine("Deathblow succeeded, target killed.");
+                    }
+                else
+                    {
+                        Console.WriteLine("Deathblow missed, target had too much health");
+                    }
+            }
+            if(obj.GetType() == typeof(Wizard))
+            {
+                Wizard target = obj as Wizard;
+                if(target.health<50)
+                    {
+                        target.health=0;
+                        Console.WriteLine("Deathblow succeeded, target killed.");
+                    }
+                else
+                    {
+                        Console.WriteLine("Deathblow missed, target had too much health");
+                    }
+            }
+            if(obj.GetType() == typeof(Samurai))
+            {
+                Samurai target = obj as Samurai;
+                if(target.health<50)
+                    {
+                        target.health=0;
+                        Console.WriteLine("Deathblow succeeded, target killed.");
+                    }
+                else
+                    {
+                        Console.WriteLine("Deathblow missed, target had too much health");
+                    }
+            }
+        }
+
+        public void Meditate()
+        {
+            health=200;
+        }
     }
 }
